@@ -1,13 +1,23 @@
 # Nhập vào 2 giá trị a, b và phép toán ‘+’, ‘-’, ‘*’, ‘/’ . Hãy xuất kết quả theo
 #đúng phép toán đã nhập
-def tim_quy_trong_nam(Thang):
-    quy = (Thang-1)//3+1
-    return quy
 
-thang = int(input("Xin vui lòng nhập vào 1 tháng:"))
+a = float(input("Nhập giá trị a: "))
+b = float(input("Nhập giá trị b: "))
 
-if(1<= thang <= 12):
-    quy = tim_quy_trong_nam(thang)
-    print(f"Tháng {thang} thuộc vào quý {quy} trong năm.")
+phep_toan = input("Nhập phép toán (+, -, *, /): ")
+
+if phep_toan == '+':
+    ket_qua = a + b
+elif phep_toan == '-':
+    ket_qua = a - b
+elif phep_toan == '*':
+    ket_qua = a * b
+elif phep_toan == '/':
+    if b != 0:
+        ket_qua = a / b
+    else:
+        ket_qua = "Lỗi: không thể chia cho 0!"
 else:
-    print("Tháng không hợp lệ!!!(SOS), xin vui lòng nhập lại :)))")
+    ket_qua = "Phép toán không hợp lệ!"
+
+print("Kết quả:", ket_qua)
